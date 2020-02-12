@@ -16,9 +16,9 @@ Route::get('/', 'MainController@index')->name('index');
 
 Route::get('/categories', 'MainController@categories')->name('categories');
 
-Route::get('/basket', 'MainController@basket')->name('basket');
+Route::get('/basket', 'BasketController@basket')->name('basket');
 
-Route::get('/basket/place', 'MainController@basketPlace')->name('basket-place');
+Route::get('/basket/place', 'BasketController@basketPlace')->name('basket-place');
 
 Route::get('/{category}', 'MainController@category')->name('category');
 
