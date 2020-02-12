@@ -5,9 +5,12 @@
             <h3>{{$product->name}}</h3>
             <p>{{$product->price}}</p>
             <p>
-                <a href="{{ route('basket') }}" class="btn btn-primary" role="button">В корзину</a>
-                {{ $product->category->name}}
-                <a href="http://laravel-diplom-1.rdavydov.ru/mobiles/iphone_x_64" class="btn btn-default" role="button">Подробнее</a>
+                <form action="{{ route('basket-add', $product) }}" method="POST">
+                    <button type="submit" href="{{ route('basket') }}" class="btn btn-primary" role="button">В корзину</button>
+                    {{ $product->category->name}}
+                    <button href="http://laravel-diplom-1.rdavydov.ru/mobiles/iphone_x_64" class="btn btn-default" role="button">Подробнее</button>
+                @csrf
+                </form>
             </p>
         </div>
     </div>
